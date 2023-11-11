@@ -8,6 +8,14 @@ function reducer(state, action) {
   switch (action.type) {
     case "notes/create":
       const createdDate = new Date();
+      if (!state)
+        return [
+          {
+            id: createdDate.toISOString(),
+            note: action.payload,
+            createdDate: createdDate.toLocaleDateString(),
+          },
+        ];
       return [
         {
           id: createdDate.toISOString(),
