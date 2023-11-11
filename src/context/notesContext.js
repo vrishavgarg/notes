@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 
-const notesContext = createContext();
+const initialState = [];
+
+const notesContext = createContext(initialState);
 
 function reducer(state, action) {
   switch (action.type) {
