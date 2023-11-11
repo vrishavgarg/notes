@@ -2,9 +2,8 @@ import { useState } from "react";
 import { HiArrowDownOnSquare, HiPencilSquare, HiTrash } from "react-icons/hi2";
 import { useNotes } from "../context/notesContext";
 
-function Note({ id, isCreating }) {
-  const { notes, dispatch } = useNotes();
-  const note = notes.filter((note) => note.id === id)[0];
+function Note({ id, isCreating, note }) {
+  const { dispatch } = useNotes();
   const [noteValue, setNoteValue] = useState(isCreating ? "" : note.note);
   const [isEditing, setIsEditing] = useState(false);
 

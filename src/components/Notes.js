@@ -8,7 +8,7 @@ function Notes({ search }) {
   return (
     <div className="notes">
       {filteredNotes?.map((note) => (
-        <Note key={note.id} id={note.id} isCreating={false} />
+        <Note note={note} key={note.id} id={note.id} isCreating={false} />
       ))}
       <Note isCreating={true} />
     </div>
